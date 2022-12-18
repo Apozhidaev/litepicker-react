@@ -21,10 +21,10 @@ npm i litepicker-react
 Step 2.
 ```jsx
 import { useMemo } from "react";
-import LitePicker from "litepicker-react";
+import LitePicker, { LitePickerOptions } from "litepicker-react";
 
 function App() {
-  const options = useMemo(
+  const options: LitePickerOptions = useMemo(
     () => ({
       singleMode: false,
       startDate: new Date(),

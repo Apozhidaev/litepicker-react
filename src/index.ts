@@ -10,12 +10,14 @@ import {
 import Litepicker from "litepicker";
 import type { ILPConfiguration } from "litepicker/dist/types/interfaces";
 
-type Props = InputHTMLAttributes<HTMLInputElement> & {
-  options: Omit<ILPConfiguration, "element">;
-};
-
 export type LitePickerInputElement = HTMLInputElement & {
   litePickerInstance?: Litepicker;
+};
+
+export type LitePickerOptions = Omit<ILPConfiguration, "element">;
+
+type Props = InputHTMLAttributes<HTMLInputElement> & {
+  options: LitePickerOptions;
 };
 
 const LitePickerWrapper = forwardRef(function LitePicker(
