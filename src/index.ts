@@ -42,7 +42,7 @@ const LitePickerWrapper = forwardRef(function LitePicker(
         element,
       });
     }
-  }, [options]);
+  }, [options, props.value]);
 
   return createElement("input", {
     ...inputProps,
