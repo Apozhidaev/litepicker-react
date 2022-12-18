@@ -1,12 +1,21 @@
 {
   "name": "litepicker-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "module": "dist/module.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:Apozhidaev/litepicker-react.git",
   "author": "alexanderpo <alexander.pozhidaev@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "litepicker",
+    "datepicker",
+    "rangepicker",
+    "date",
+    "daterange",
+    "picker",
+    "range"
+  ],
   "scripts": {
     "build:ts": "tsc",
     "build:cjs": "esbuild src/index.ts --format=cjs --bundle --outfile=dist/index.js --external:react --external:litepicker",

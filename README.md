@@ -19,11 +19,6 @@ npm i litepicker-react
 ```
 
 Step 2.
-```javascript
-import LitePicker from "litepicker-react";
-```
-
-Step 3.
 ```jsx
 import { useMemo } from "react";
 import LitePicker from "litepicker-react";
