@@ -13,7 +13,7 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
   options: any;
 };
 
-const LitePicker = forwardRef(function LitePicker(props: Props, ref) {
+const LitePickerWrapper = forwardRef(function LitePicker(props: Props, ref) {
   const inputRef = useRef<HTMLInputElement>(null);
   useImperativeHandle(ref, () => inputRef.current);
   const { options, ...rest } = props;
@@ -39,4 +39,4 @@ const LitePicker = forwardRef(function LitePicker(props: Props, ref) {
   });
 });
 
-export default memo(LitePicker);
+export default memo(LitePickerWrapper);
