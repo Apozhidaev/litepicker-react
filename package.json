@@ -1,0 +1,23 @@
+{
+  "name": "litepicker-react",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:Apozhidaev/litepicker-react.git",
+  "author": "alexanderpo <alexander.pozhidaev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:cjs": "esbuild src/index.ts --format=cjs --bundle --outfile=dist/index.js --external:react --external:litepicker",
+    "build:esm": "esbuild src/index.ts --format=esm --bundle --outfile=dist/module.js --external:react --external:litepicker",
+    "build": "yarn run build:cjs && yarn run build:esm && yarn run build:ts"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "esbuild": "^0.16.9",
+    "litepicker": "^2.0.12",
+    "react": "^18.2.0",
+    "typescript": "^4.9.4"
+  }
+}
