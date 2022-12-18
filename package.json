@@ -1,6 +1,6 @@
 {
   "name": "litepicker-react",
-  "version": "0.0.7",
+  "version": "0.0.12",
   "main": "dist/index.js",
   "module": "dist/module.js",
   "types": "dist/index.d.ts",
@@ -24,7 +24,7 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "litepicker": "*"
+    "litepicker": ">=2.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

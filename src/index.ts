@@ -8,18 +8,26 @@ import {
   createElement,
 } from "react";
 import Litepicker from "litepicker";
+import type { ILPConfiguration } from "litepicker/dist/types/interfaces";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
-  options: any;
+  options: Omit<ILPConfiguration, "element">;
 };
 
-const LitePickerWrapper = forwardRef(function LitePicker(props: Props, ref) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  useImperativeHandle(ref, () => inputRef.current);
+export type LitePickerInputElement = HTMLInputElement & {
+  litePickerInstance?: Litepicker;
+};
+
+const LitePickerWrapper = forwardRef(function LitePicker(
+  props: Props,
+  ref: React.ForwardedRef<LitePickerInputElement>
+) {
+  const inputRef = useRef<LitePickerInputElement>(null);
+  useImperativeHandle(ref, () => inputRef.current!);
   const { options, ...inputProps } = props;
 
   useLayoutEffect(() => {
-    const element: any = inputRef.current;
+    const element = inputRef.current;
     if (element) {
       if (element.litePickerInstance) {
         element.litePickerInstance.destroy();
