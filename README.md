@@ -1,6 +1,6 @@
 # litepicker-react
 
-This component is react wrapper for litepicker.
+This component is react wrapper for [litepicker](https://litepicker.com/).
 
 
 
