@@ -16,15 +16,17 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
 const LitePickerWrapper = forwardRef(function LitePicker(props: Props, ref) {
   const inputRef = useRef<HTMLInputElement>(null);
   useImperativeHandle(ref, () => inputRef.current);
-  const { options, ...rest } = props;
+  const { options, ...inputProps } = props;
 
   useLayoutEffect(() => {
     const element: any = inputRef.current;
     if (element) {
       if (element.litePickerInstance) {
         element.litePickerInstance.destroy();
+        if (!props.value) {
+          element.value = "";
+        }
       }
-      element.value = "";
       element.litePickerInstance = new Litepicker({
         ...props.options,
         element,
@@ -33,7 +35,7 @@ const LitePickerWrapper = forwardRef(function LitePicker(props: Props, ref) {
   }, [options]);
 
   return createElement("input", {
-    ...rest,
+    ...inputProps,
     ref: inputRef,
     type: "text",
   });

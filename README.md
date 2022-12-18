@@ -27,6 +27,8 @@ function App() {
   const options = useMemo(
     () => ({
       singleMode: false,
+      startDate: new Date(),
+      endDate: new Date()
     }),
     []
   );

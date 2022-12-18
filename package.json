@@ -1,6 +1,6 @@
 {
   "name": "litepicker-react",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "module": "dist/module.js",
   "types": "dist/index.d.ts",
@@ -21,6 +21,10 @@
     "build:cjs": "esbuild src/index.ts --format=cjs --bundle --outfile=dist/index.js --external:react --external:litepicker",
     "build:esm": "esbuild src/index.ts --format=esm --bundle --outfile=dist/module.js --external:react --external:litepicker",
     "build": "yarn run build:cjs && yarn run build:esm && yarn run build:ts"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "litepicker": "*"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
